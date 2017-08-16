@@ -1,14 +1,9 @@
 var path = require('path');
-var webpack = require('webpack');
+// var webpack = require('webpack');
 
 module.exports = {
-    devServer: {
-        inline: true,
-        contentBase: './src',
-        port: 3000
-    },
     devtool: 'cheap-module-eval-source-map',
-    entry: './dev/js/index.js',
+    entry: './client/js/index.js',
     module: {
         loaders: [
             {
@@ -23,10 +18,7 @@ module.exports = {
         ]
     },
     output: {
-        path: 'src',
+        path: 'dist',
         filename: 'js/bundle.min.js'
-    },
-    plugins: [
-        new webpack.optimize.OccurrenceOrderPlugin()
-    ]
+    }
 };
